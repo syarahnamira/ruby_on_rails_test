@@ -1,0 +1,14 @@
+<h1><%= @chatroom.name %></h1>
+
+<div id="messages">
+  <%= render @chatroom.messages %>
+</div>
+
+<%= form_with(model: [@chatroom, @message], local: false) do |form| %>
+  <div>
+    <%= form.text_area :content %>
+  </div>
+  <div>
+    <%= form.submit 'Send' %>
+  </div>
+<% end %>
